@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Trivia Game for GWU Bootcamp">
+    <meta name="author" content="Chris Stuckey">
 
     <title>Trivia Game</title>
 
@@ -27,126 +29,50 @@
           <div class="panel panel-default">
             <div class="panel-body directions">
               
-              <h1>Totally Trivial Trivia</h1>
+              <h1>Totally Trivial Trivia! <span id="weather">Weather</span></h1>
 
-              <button type="button" id="start" class="btn btn-primary btn-lg btn-block">Start Trivia</button>
+              <button type="button" id="start" class="btn btn-primary btn-lg btn-block buttonWrapper">Start</button>
 
-            <form id="trivia" style="display:none;">
-              
-              <h3>Time Remaining: <div id="showNumber"></div> seconds</h3>
-              
-              <h3>How do prevailing winds that travel across large bodies of water affect the climate?</h3>
-                <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions1" id="questionOne" value="wrong"> They make it colder.
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions1" id="questionOne" value="wrong"> They make it warmer.
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions1" id="questionOne" value="correct"> They make it wetter.
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions1" id="questionOne" value="wrong"> They make it drier.
-                </label>
+              <div id="gameStart">
+                <p class="timeRemaining">Time Remaining: <span id="time">15</span></p>
 
-                <!-- Answer is C -->
+                <p class="questions"></p>
 
-              <h3>Wind will generally carry the most moisture when it comes from</h3>
                 <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions2" id="questionTwo" value="wrong"> warm grasslands.
+                <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"><p class="answers answer1"></p>
                 </label>
                 <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions2" id="questionTwo" value="correct"> warm tropical seas.
+                <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"><p class="answers answer2"></p>
                 </label>
                 <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions2" id="questionTwo" value="wrong"> polar icecaps.
+                <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"><p class="answers answer3"></p>
                 </label>
                 <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions2" id="questionTwo" value="wrong"> mountainous regions.
+                <input type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4"><p class="answers answer4"></p>
                 </label>
+                
+              </div>
 
-                <!-- Answer is B -->
+              <div id="divAnswers">
+                <p class="timeRemaining">Time Remaining: <span id="elapsedTime"></span></p>
+                <p id="wrongMsg">Thats a wrong answer!</p>
+                <p id="correctMsg">Absolutely correct!</p>
+                <p id="outOfTime">Time Up!</p>
+                <p id="pCorrectAnswer">The correct answer is: <span></span></p>
+              </div>
 
-              <h3>The windward side of a mountain usually</h3>
-                <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions3" id="questionThree" value="wrong"> is a desert.
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions3" id="questionThree" value="wrong"> has no precipitation.
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions3" id="questionThree" value="correct"> is lush and green.
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions3" id="questionThree" value="wrong"> has warm, sinking air.
-                </label>
-
-                <!-- Answer is C -->
-
-              <h3>Prevailing winds that travel to a region across a large body of water would probably make the region’s climate</h3>
-                <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions4" id="questionFour" value="wrong"> warmer.
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions4" id="questionFour" value="correct"> wetter.
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions4" id="questionFour" value="wrong"> cooler.
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions4" id="questionFour" value="wrong"> drier.
-                </label>
-
-                <!-- Answer is B -->
-
-              <h3>What kind of weather does a cold front usually bring?</h3>
-                <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions5" id="questionFive" value="wrong"> warm
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions5" id="questionFive" value="correct"> stormy
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions5" id="questionFive" value="wrong"> sunny
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions5" id="questionFive" value="wrong"> windy
-                </label>
-
-                <!-- Answer is B -->
-
-              <h3>Which describes an altocumulus cloud?</h3>
-                <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions6" id="questionSix" value="wrong"> high, feathery cloud
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions6" id="questionSix" value="correct"> puffy mid-level cloud
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions6" id="questionSix" value="wrong"> low storm cloud
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="inlineRadioOptions6" id="questionSix" value="wrong"> high cloud made of ice crystals
-                </label>
-
-                <!-- Answer is B -->
-
-              <br>
-              <input class="btn btn-success align-center" id="tallyScore" type="submit" value="Submit" onclick="checkAll()">
-
-            </form>
-
-            <form id="done" style="display:none;">
-              <h3>Done!</h3>
-              <h4>Correct Answers: <div id="correctAnswer"></div></h4>
-              <h4>Incorrect Answers: <div id="incorrectAnswer"></div></h4>
-              <h4>Unanswered: <div id="unanswered"></div></h4>
-            </form>
+              <div id="gameComplete">
+                <p>Game over! Here's your score:</p>
+                <p id="gameOverCorrect">Correct Answers: <span></span></p>
+                <p id="gameOverIncorrect">Incorrect Answers: <span></span></p>
+                <p id="unanswered">Unanswered Questions: <span></span></p>
+                <div id="restartPlaceholder"><button class="text-center btn btn-default">Restart?</button></div>
+              </div>
+            </div>
 
             </div>
           </div>
         </div>
-      </div>
     
     </div>
   </div>    
@@ -155,8 +81,10 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 
     <!-- jQuery CDN -->
-    <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <script type="text/javascript" src="assets/javascript/apps.js"></script>
 
+<!-- a little help from -->
+<!-- https://github.com/mitalimn/TriviaGame/blob/master/assets/javascript/app.js -->
 
     <!-- Bootstrap CDN -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>

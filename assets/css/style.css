@@ -37,3 +37,31 @@ h1 {
 #done {
   /*display: none;*/
 }
+
+.btn-default {
+  background-image: none;
+} 
+
+/*.buttonWrapper {
+  display: none;
+}*/
+
+div#gameStart {
+  display: none;
+  /*margin-top: 20px;*/
+} 
+
+#divAnswers {
+  display: none;
+}
+
+#gameComplete {
+  display: none;
+  margin-top: 20px;
+}
+
+button.answers:hover {
+  color: #FFF;
+  }
+
+
